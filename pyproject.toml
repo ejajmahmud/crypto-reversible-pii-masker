@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crypto-reversible-pii-masker"
+version = "0.1.0"
+description = "Deterministic reversible pseudonymization proxy that masks PII before sending prompts to external LLMs and restores it on output"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Ejaj Mahmud", email = "dev@ejajmahmud.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+
+[project.scripts]
+crypto-reversible-pii-masker = "crypto_reversible_pii_masker.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["crypto_reversible_pii_masker*"]
